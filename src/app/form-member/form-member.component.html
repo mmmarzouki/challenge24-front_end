@@ -1,0 +1,33 @@
+  <div class="centeredText">
+    <h3 class="title ">Member #{{number}} <br>Details</h3>
+  </div>
+  <label class="MyLabel">Member #{{number}} Name</label>
+  <div class="{{memberNameClass}}">
+    <div class="input-group-prepend round">
+      <span class="input-group-text"><i class="nc-icon nc-single-02"></i></span>
+    </div>
+    <input type="text" name="name" required [(ngModel)]="member.name" class="form-control" placeholder="Name">
+    <label class="form-control-feedback" *ngIf="invalidMemberName">Member Name Cannot be Empty</label>
+  </div>
+  <hr>
+  <label class="MyLabel">Member #{{number}} Email</label>
+  <div class="{{memberEmailClass}}">
+    <div class="input-group-prepend">
+      <span class="input-group-text">  
+        <i class="nc-icon nc-email-85"></i>
+      </span>
+    </div>
+    <input type="email" name="email" required [(ngModel)]="member.email" class="form-control" placeholder="Email">
+    <label class="form-control-feedback" *ngIf="invalidMemberEmail">Member Email Cannot be Empty</label>
+  </div>
+  <hr>
+  <label class="MyLabel">Member #{{number}} Phone Number</label>
+  <div class="{{memberPhoneClass}}">
+    <div class="input-group-prepend">
+      <span class="input-group-text">  
+        <i class="nc-icon nc-mobile"></i>
+      </span>
+    </div>
+  <input type="tel" name="phone" required [(ngModel)]="member.phone" class="form-control" placeholder="Phone">
+    <label class="form-control-feedback" *ngIf="invalidMemberPhone">Member Phone Cannot be Empty</label>
+</div>

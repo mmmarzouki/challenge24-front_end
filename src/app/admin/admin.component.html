@@ -1,0 +1,30 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<div>
+  <input type="text" name="username" required [(ngModel)]="username" class="form-control" placeholder="Name">
+  <input type="password" name="password" required [(ngModel)]="password" class="form-control" placeholder="Password">
+  <button (click)="submit()">submit</button>
+</div>
+<div *ngIf="accepted">
+  <table class="table table-bordered table-striped">
+    <tr *ngFor="let team of teams">
+      <td>
+        {{team.name}}
+      </td>
+      <td>
+        {{team.number_participants}}
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let member of team.members">
+            {{member.name}} : {{member.phone}} // {{member.email}} -- {{member.leader}}
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>

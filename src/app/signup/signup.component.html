@@ -1,0 +1,44 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('assets/img/INSAT.jpg')">
+        <div class="filter"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                        <app-form-team [invalidMemberEmail]="invalidMemberEmail" [invalidMemberName]="invalidMemberName" [invalidMemberPhone]="invalidMemberPhone" [memberEmailClass]="memberEmailClass" [memberNameClass]="memberNameClass" [memberPhoneClass]="memberPhoneClass" [team]="team" ></app-form-team>
+                    </div>
+                </div>
+                
+                <div *ngIf="team.number_participants > 0" class="card MyCard" style="background-color: #07101f;">
+                    <div class="row " >
+                      <div class="col-md-3">
+                        <app-form-member [memberPhoneClass]="memberPhoneClass[0]" [memberNameClass]="memberNameClass[0]"
+                                         [memberEmailClass]="memberEmailClass[0]" [invalidMemberPhone]="invalidMemberPhone[0]"
+                                         [invalidMemberName]="invalidMemberName[0]" [invalidMemberEmail]="invalidMemberEmail[0]"
+                                         [number]="1" [member]="team.members[0]" [team]="team"></app-form-member>
+                      </div>
+                      <div class="col-md-3">
+                        <app-form-member *ngIf="team.number_participants > 1" [memberPhoneClass]="memberPhoneClass[1]"
+                                         [memberNameClass]="memberNameClass[1]" [memberEmailClass]="memberEmailClass[1]"
+                                         [invalidMemberPhone]="invalidMemberPhone[1]" [invalidMemberName]="invalidMemberName[1]"
+                                         [invalidMemberEmail]="invalidMemberEmail[1]"  [number]="2" [member]="team.members[1]"
+                                         [team]="team"></app-form-member>
+                      </div>
+                      <div class="col-md-3">
+                      <app-form-member *ngIf="team.number_participants > 2" [memberPhoneClass]="memberPhoneClass[2]"
+                                       [memberNameClass]="memberNameClass[2]" [memberEmailClass]="memberEmailClass[2]"
+                                       [invalidMemberPhone]="invalidMemberPhone[2]" [invalidMemberName]="invalidMemberName[2]"
+                                       [invalidMemberEmail]="invalidMemberEmail[2]" [number]="3" [member]="team.members[2]" [team]="team">
+                      </app-form-member>
+                      </div>
+                      <div class="col-md-3">
+                        <app-form-member *ngIf="team.number_participants > 3" [memberPhoneClass]="memberPhoneClass[3]"
+                                         [memberNameClass]="memberNameClass[3]" [memberEmailClass]="memberEmailClass[3]"
+                                         [invalidMemberPhone]="invalidMemberPhone[3]" [invalidMemberName]="invalidMemberName[3]"
+                                         [invalidMemberEmail]="invalidMemberEmail[3]" [number]="4" [member]="team.members[3]" [team]="team">
+                        </app-form-member>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+    </div>
+</div>
