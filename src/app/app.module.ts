@@ -19,8 +19,10 @@ import { FormsComponent } from './forms/forms.component';
 import { FormTeamComponent } from './form-team/form-team.component';
 import { FormMemberComponent } from './form-member/form-member.component';
 import { AdminComponent } from './admin/admin.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
+  entryComponents:[ModalComponent],
   declarations: [
     AppComponent,
     SignupComponent,
@@ -31,7 +33,8 @@ import { AdminComponent } from './admin/admin.component';
     FormsComponent,
     FormTeamComponent,
     FormMemberComponent,
-    AdminComponent
+    AdminComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { AdminComponent } from './admin/admin.component';
     RouterModule,
     AppRoutingModule,
     HomeModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

@@ -2,6 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Team } from 'app/models/team';
 import {Member} from "app/models/member";
 import {TeamServiceService} from "../services/team-service.service";
+import {NgbdModalContent} from "../components/modal/modal.component";
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import {ModalComponent} from "../modal/modal.component";
 
 @Component({
   selector: 'app-form-team',
@@ -17,7 +20,7 @@ export class FormTeamComponent implements OnInit {
     name:"0",
     members:[]
   };
-  constructor(private teamService: TeamServiceService) { }
+  constructor(private teamService: TeamServiceService,private modalService: NgbModal) { }
   invalidTeamName:boolean = false;
   teamNameClass:string = "form-group";
 
@@ -83,10 +86,16 @@ export class FormTeamComponent implements OnInit {
       console.log('sending msg');
       this.teamService.createTeam(this.formTeam).subscribe(res=>{
         //nothing lel
+        this.openModal();
       });
       console.log('msg sent');
     }
   }
+
+  openModal() {
+    this.modalService.open(ModalComponent);
+  }
+
   addMember(){
     this.team.number_participants++;    
   }
