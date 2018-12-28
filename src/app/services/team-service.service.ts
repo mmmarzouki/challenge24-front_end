@@ -15,7 +15,7 @@ const httpOptions = {
 export class TeamServiceService {
 
 
-  private url:string="http://localhost:8000/api/team";
+  private url:string="http://51.75.206.22:8000/api/team";
 
   constructor(private http: HttpClient) { }
 

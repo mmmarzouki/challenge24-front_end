@@ -17,7 +17,7 @@ export class AdminComponent implements OnInit {
 
   constructor(private teamService: TeamServiceService) { }
 
-  private submit(){
+  public submit(){
     if(this.username==="techlens" && this.password==="techlens_admin"){
       this.accepted=true;
       console.log(this.teams);
