@@ -21,6 +21,14 @@ import { FormMemberComponent } from './form-member/form-member.component';
 import { AdminComponent } from './admin/admin.component';
 import { ModalComponent } from './modal/modal.component';
 
+import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
+import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
+import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
+
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true
+};
+
 @NgModule({
   entryComponents:[ModalComponent],
   declarations: [
@@ -44,9 +52,14 @@ import { ModalComponent } from './modal/modal.component';
     AppRoutingModule,
     HomeModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    PerfectScrollbarModule
+
   ],
-  providers: [HttpClientModule],
+  providers: [HttpClientModule,{
+    provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Team } from 'app/models/team';
+import {
+    PerfectScrollbarComponent,
+    PerfectScrollbarConfigInterface,
+    PerfectScrollbarDirective
+} from "ngx-perfect-scrollbar";
 
 @Component({
     selector: 'app-signup',
@@ -18,6 +23,10 @@ export class SignupComponent implements OnInit {
     invalidMemberPhone:boolean[]= [false,false,false,false];
     memberPhoneClass:string[]=["input-group","input-group","input-group","input-group"];
 
+    @ViewChild(PerfectScrollbarComponent) componentRef?: PerfectScrollbarComponent;
+    @ViewChild(PerfectScrollbarDirective) directiveRef?: PerfectScrollbarDirective;
+
+    public config: PerfectScrollbarConfigInterface = {};
 
     team:Team = {
         members:[{
