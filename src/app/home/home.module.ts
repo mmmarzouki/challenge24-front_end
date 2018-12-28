@@ -15,9 +15,11 @@ import { ComponentsModule } from '../components/components.module';
         BrowserModule,
         FormsModule,
         RouterModule,
-        ComponentsModule
+        ComponentsModule,
     ],
-    declarations: [ HomeComponent ],
+    declarations: [
+        HomeComponent
+    ],
     exports:[ HomeComponent ],
     providers: []
 })

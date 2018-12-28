@@ -34,7 +34,7 @@ import { ModalComponent } from './modal/modal.component';
     FormTeamComponent,
     FormMemberComponent,
     AdminComponent,
-    ModalComponent
+    ModalComponent,
   ],
   imports: [
     BrowserModule,

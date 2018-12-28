@@ -17,7 +17,7 @@ const routes: Routes =[
     { path: 'landing',          component: LandingComponent },
     { path: 'nucleoicons',      component: NucleoiconsComponent },
     { path: 'admin',            component: AdminComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' }
+    { path: '*', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
